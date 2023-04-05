@@ -11,18 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('games_stages', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('role_id');
-            $table->foreign('role_id')
-                ->references('id')->on('roles')
+            $table->unsignedBigInteger('game_id');
+            $table->foreign('game_id')
+                ->references('id')->on('games')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
-            $table->string('userName')->unique();
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->unsignedBigInteger('stage_id');
+            $table->foreign('stage_id')
+                ->references('id')->on('stages')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('games_stages');
     }
 };
