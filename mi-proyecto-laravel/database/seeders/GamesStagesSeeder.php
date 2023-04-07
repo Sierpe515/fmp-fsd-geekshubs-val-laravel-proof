@@ -17,26 +17,32 @@ class GamesStagesSeeder extends Seeder
             [
                 'game_id' => 1,
                 'stage_id' => 1,
+                'answer_id' => 1,
             ],
             [
                 'game_id' => 1,
                 'stage_id' => 2,
+                'answer_id' => 2,
             ],
             [
                 'game_id' => 2,
                 'stage_id' => 1,
+                'answer_id' => 1,
             ],
             [
                 'game_id' => 2,
                 'stage_id' => 2,
+                'answer_id' => 3,
             ],
             [
                 'game_id' => 3,
                 'stage_id' => 1,
+                'answer_id' => 1,
             ],
             [
                 'game_id' => 3,
                 'stage_id' => 2,
+                'answer_id' => 4,
             ],
         ]);
     }

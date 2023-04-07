@@ -18,6 +18,11 @@ return new class extends Migration
                 ->references('id')->on('characters')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
+            $table->unsignedBigInteger('select_game_id');
+            $table->foreign('select_game_id')
+                ->references('id')->on('select_games')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->enum('difficulty', ['easy','medium','hard']);
             $table->timestamps();
         });

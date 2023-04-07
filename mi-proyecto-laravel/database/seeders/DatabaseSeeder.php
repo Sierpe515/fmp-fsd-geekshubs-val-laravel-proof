@@ -16,12 +16,12 @@ class DatabaseSeeder extends Seeder
             RolesSeeder::class,
             UsersSeeder::class,
             CharactersSeeder::class,
+            SelectGamesSeeder::class,
             GamesSeeder::class,
             StagesSeeder::class,
             BadgesSeeder::class,
             AnswersSeeder::class,
             GamesStagesSeeder::class,
-            GamesAnswersSeeder::class,
         ]);
         // \App\Models\User::factory(10)->create();
 

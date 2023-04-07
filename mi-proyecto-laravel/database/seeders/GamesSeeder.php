@@ -16,14 +16,17 @@ class GamesSeeder extends Seeder
         DB::table('games')->insert([
             [
                 'character_id' => 1,
+                'select_game_id' => 1,
                 'difficulty' => "hard",
             ],
             [
                 'character_id' => 2,
+                'select_game_id' => 1,
                 'difficulty' => "medium",
             ],
             [
                 'character_id' => 3,
+                'select_game_id' => 1,
                 'difficulty' => "easy",
             ],
         ]);

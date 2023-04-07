@@ -23,6 +23,11 @@ return new class extends Migration
                 ->references('id')->on('stages')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
+            $table->unsignedBigInteger('answer_id');
+            $table->foreign('answer_id')
+                ->references('id')->on('answers')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->timestamps();
         });
     }
