@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -30,3 +31,7 @@ Route::get('/users', [UserController::class, 'getUsers']);
 Route::put('/users', [UserController::class, 'updateUser']);
 // AÑADIR MIDDLEWARE ISADMIN
 Route::delete('/users/{id}', [UserController::class, 'deleteUserByAdmin']);
+Route::put('/users/updateRole/{id}', [UserController::class, 'updateUserRoleByAdmin']);
+
+// ROLES
+Route::post('/newRole', [RoleController::class, 'createPrivilege']);

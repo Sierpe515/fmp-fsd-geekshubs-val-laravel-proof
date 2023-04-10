@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -32,5 +30,35 @@ class UserController extends Controller
                 'success' => false,
                 'message' => $th->getMessage()],500);
         }  
+    }
+
+    public function updateUserRoleByAdmin(Request $request, $id){
+        try {
+            $user = User::find($id);
+
+            if(!$user) {
+                return response()->json([
+                    'success' => true,
+                    'message' => 'User does not exist',
+                ],404);                
+            }
+
+            $role_id = $request->input('role_id');
+
+            if(isset($role_id)){
+                $user->role_id =$request->input('role_id');
+            }
+
+            $user->save();
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Role updated',
+                'data' => $user],200);
+        } catch (\Throwable $th){
+            return response()->json([ 
+                'success' => false,
+                'message' => $th->getMessage()],500);
+        } 
     }
 }
