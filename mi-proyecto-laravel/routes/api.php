@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CharacterController;
+use App\Http\Controllers\GameController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\SelectGameController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -45,3 +47,11 @@ Route::group([
     ], function () {
     Route::post('/characters/newCharacter', [CharacterController::class, 'createNewCharacters']);
 });
+
+// SELECTGAMES
+Route::get('/selectGames/withSavedGames', [SelectGameController::class, 'getSelectGamesWithSavedGame']);
+Route::get('/selectGames', [SelectGameController::class, 'getSelectGames']);
+
+// GAMES
+Route::get('/games/withSelectGames', [GameController::class, 'getGamesWithSelectGame']);
+Route::get('/games', [GameController::class, 'getGames']);
