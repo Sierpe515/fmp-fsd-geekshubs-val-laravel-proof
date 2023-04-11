@@ -9,7 +9,7 @@ class UserController extends Controller
 {
     public function getUsers(){
         // $users = User::query()->get();
-        $users = User::with('roles')->get();
+        $users = User::with('role')->get();
         // $users = User::whereHas('roles')->get();
         // $users->roles;
         return $users;

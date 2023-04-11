@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Validation\Rules\Password;
 use Laravel\Sanctum\PersonalAccessToken;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -18,9 +19,10 @@ class AuthController extends Controller
         try {
             // ToDo TryCatch
             $request->validate([
-                'userName' => 'required|string|unique:users,userName|max:20',
-                'email' => 'required|string|unique:users,email|max:40',
-                'password' => 'required|string|min:6|max:12',
+                'userName' => 'required|string|unique:users,userName|regex:/^[a-zA-Z0-9 ]*$/|max:20',
+                'email' => 'required|string|unique:users,email|regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/|max:40',
+                // 'password' => 'required|string|min:6|max:12',
+                'password' => ['required', Password::min(6)->mixedCase()->letters()->numbers(),]
             ]);
 
             $user = User::create([

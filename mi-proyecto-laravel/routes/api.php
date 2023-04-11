@@ -1,10 +1,13 @@
 <?php
 
+use App\Http\Controllers\AnswerController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BadgeController;
 use App\Http\Controllers\CharacterController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SelectGameController;
+use App\Http\Controllers\StageController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -55,3 +58,16 @@ Route::get('/selectGames', [SelectGameController::class, 'getSelectGames']);
 // GAMES
 Route::get('/games/withSelectGames', [GameController::class, 'getGamesWithSelectGame']);
 Route::get('/games', [GameController::class, 'getGames']);
+Route::middleware('auth:sanctum')->post('/games', [GameController::class, 'createNewGame']);
+
+// STAGES
+Route::get('/stages', [StageController::class, 'getStages']);
+Route::get('/stages/withAnswers', [StageController::class, 'getStagesWithAnswers']);
+
+// ANSWERS
+Route::get('/answers', [AnswerController::class, 'getAnswers']);
+Route::get('/answers/withStage', [AnswerController::class, 'getAnswersWithStage']);
+
+// BADGES
+Route::get('/badges', [BadgeController::class, 'getBadges']);
+Route::get('/badges/withAnswers', [BadgeController::class, 'getBadgesWithAnswers']);

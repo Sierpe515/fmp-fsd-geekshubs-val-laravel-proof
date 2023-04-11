@@ -13,4 +13,9 @@ class Game extends Model
     {
         return $this->belongsTo(SelectGame::class, 'select_game_id');
     }
+
+    public function stages()
+    {
+        return $this->belongsToMany(Stage::class);
+    }
 }
