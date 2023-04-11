@@ -39,4 +39,19 @@ class RoleController extends Controller
                 'message' => "Error creating new role"],500);
         }
     }
+
+    public function getRolesByIdWithUsers(Request $request, $id){
+        try {
+            $rolesByIdWithUsers = Role::with(['users'])->find($id);
+
+            return [
+                'success' => true,
+                'data' => $rolesByIdWithUsers
+            ];
+        } catch (\Throwable $th){
+            return response()->json([ 
+                'success' => false,
+                'message' => $th->getMessage()],500);
+        } 
+    }
 }

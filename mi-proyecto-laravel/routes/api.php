@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CharacterController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
@@ -28,6 +29,7 @@ Route::middleware('auth:sanctum')->post('/logout', [AuthController::class, 'logo
 
 // USERS
 Route::get('/users', [UserController::class, 'getUsers']);
+Route::get('/users/withCharacters', [UserController::class, 'getUserByIdWithCharacters']);
 Route::put('/users', [UserController::class, 'updateUser']);
 // AÑADIR MIDDLEWARE ISADMIN
 Route::delete('/users/{id}', [UserController::class, 'deleteUserByAdmin']);
@@ -35,3 +37,11 @@ Route::put('/users/updateRole/{id}', [UserController::class, 'updateUserRoleByAd
 
 // ROLES
 Route::post('/newRole', [RoleController::class, 'createPrivilege']);
+Route::get('/roles/{id}', [RoleController::class, 'getRolesByIdWithUsers']);
+
+// CHARACTERS
+Route::group([
+    'middleware' => 'auth:sanctum'
+    ], function () {
+    Route::post('/characters/newCharacter', [CharacterController::class, 'createNewCharacters']);
+});

@@ -8,8 +8,25 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function getUsers(){
-        $users = User::query()->get();
+        // $users = User::query()->get();
+        $users = User::whereHas('roles')->get();
+        // $users->roles;
         return $users;
+    }
+
+    public function getUserByIdWithCharacters(){
+        try {
+            $userByIdWithCharacters = User::with(['characters'])->get();
+
+            return [
+                'success' => true,
+                'data' => $userByIdWithCharacters
+            ];
+        } catch (\Throwable $th){
+            return response()->json([ 
+                'success' => false,
+                'message' => $th->getMessage()],500);
+        } 
     }
 
     public function updateUser(){
