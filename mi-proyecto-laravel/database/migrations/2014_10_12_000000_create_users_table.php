@@ -19,9 +19,12 @@ return new class extends Migration
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->string('userName')->unique();
+            $table->string('name')->nullable();
+            $table->string('surname')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->date('birthdate')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

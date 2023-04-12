@@ -15,12 +15,11 @@ class UserController extends Controller
         return $users;
     }
 
-    public function getUsersRole(){
+    public function getProfile(){
 
-        // $users = User::find(auth()->user()->id);
+        $users = User::find(auth()->user()->id);
 
-        // return $users;
-        return 'hola';
+        return $users;
     }
 
     public function getUserByIdWithCharacters(){

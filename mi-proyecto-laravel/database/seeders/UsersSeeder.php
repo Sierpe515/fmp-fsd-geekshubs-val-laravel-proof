@@ -20,7 +20,7 @@ class UsersSeeder extends Seeder
                 'userName' => "Sierpe",
                 'email' => "fernando@fernando.com",
                 'email_verified_at' => now(),
-                'password' => "ClaveFalsa1",
+                'password' => bcrypt("ClaveFalsa1"),
                 'remember_token' => Str::random(10)
             ],
             [
@@ -28,7 +28,7 @@ class UsersSeeder extends Seeder
                 'userName' => "Witcher",
                 'email' => "witcher@witcher.com",
                 'email_verified_at' => now(),
-                'password' => "ClaveFalsa1",
+                'password' => bcrypt("ClaveFalsa1"),
                 'remember_token' => Str::random(10)
             ],
             [
@@ -36,7 +36,7 @@ class UsersSeeder extends Seeder
                 'userName' => "True Knight",
                 'email' => "true@true.com",
                 'email_verified_at' => now(),
-                'password' => "ClaveFalsa1",
+                'password' => bcrypt("ClaveFalsa1"),
                 'remember_token' => Str::random(10)
             ],
         ]);
