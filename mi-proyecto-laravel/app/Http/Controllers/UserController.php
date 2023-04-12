@@ -15,6 +15,14 @@ class UserController extends Controller
         return $users;
     }
 
+    public function getUsersRole(){
+
+        // $users = User::find(auth()->user()->id);
+
+        // return $users;
+        return 'hola';
+    }
+
     public function getUserByIdWithCharacters(){
         try {
             $userByIdWithCharacters = User::with(['characters'])->get();

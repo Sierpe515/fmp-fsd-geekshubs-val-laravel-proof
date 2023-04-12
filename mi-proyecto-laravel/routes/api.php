@@ -37,7 +37,13 @@ Route::get('/users', [UserController::class, 'getUsers']);
 Route::get('/users/withCharacters', [UserController::class, 'getUserByIdWithCharacters']);
 Route::put('/users', [UserController::class, 'updateUser']);
 // AÑADIR MIDDLEWARE ISADMIN
-Route::delete('/users/{id}', [UserController::class, 'deleteUserByAdmin']);
+// Route::group([
+//     'middleware' => ['auth:sanctum','admin']
+//     ], function () {
+//         Route::get('/users/role', [UserController::class, 'getUsersRole']);
+//         Route::delete('/users/{id}', [UserController::class, 'deleteUserByAdmin']);
+// });
+Route::middleware('admin')->get('/users/role', [UserController::class, 'getUsersRole']);
 Route::put('/users/updateRole/{id}', [UserController::class, 'updateUserRoleByAdmin']);
 
 // ROLES
