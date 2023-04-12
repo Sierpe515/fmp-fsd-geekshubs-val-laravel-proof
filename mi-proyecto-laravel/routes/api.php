@@ -37,15 +37,16 @@ Route::middleware('auth:sanctum')->post('/logout', [AuthController::class, 'logo
 Route::get('/users', [UserController::class, 'getUsers']);
 Route::get('/users/withCharacters', [UserController::class, 'getUserByIdWithCharacters']);
 Route::put('/users', [UserController::class, 'updateUser']);
+Route::middleware('auth:sanctum')->get('/users/profile', [UserController::class, 'getProfile']);
+Route::middleware('auth:sanctum')->put('/users/updateProfile', [UserController::class, 'updateProfile']);
 // AÑADIR MIDDLEWARE ISADMIN
 Route::group([
     'middleware' => ['auth:sanctum','admin']
     ], function () {
-        Route::get('/users/profile', [UserController::class, 'getProfile']);
         Route::delete('/users/{id}', [UserController::class, 'deleteUserByAdmin']);
+        Route::put('/users/updateRole/{id}', [UserController::class, 'updateUserRoleByAdmin']);
 });
-// Route::middleware('auth:sanctum')->middleware('admin')->get('/users/profile', [UserController::class, 'getProfile']);
-Route::put('/users/updateRole/{id}', [UserController::class, 'updateUserRoleByAdmin']);
+
 
 // ROLES
 Route::post('/newRole', [RoleController::class, 'createPrivilege']);
