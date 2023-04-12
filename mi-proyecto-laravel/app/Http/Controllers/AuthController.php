@@ -42,7 +42,7 @@ class AuthController extends Controller
                 "token" => $token
             ];
 
-            // Mail::to($user->email)->send(new mailExample($request['name']));
+            Mail::to($user->email)->send(new mailExample($request['userName']));
 
             return response()->json($res, Response::HTTP_CREATED);
         } catch (\Throwable $th){

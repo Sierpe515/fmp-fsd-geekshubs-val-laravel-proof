@@ -41,7 +41,7 @@ class IsAdmin
             Log::info('Middleware isAdmin not permissions');
             return response()->json([
                 'succes' => false,
-                'message' => 'Not permissions',
+                'message' => 'No permissions',
                 // dump(auth()->user())
             ]);
         } catch (\Throwable $th){

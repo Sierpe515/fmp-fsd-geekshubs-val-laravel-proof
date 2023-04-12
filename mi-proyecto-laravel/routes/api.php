@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BadgeController;
 use App\Http\Controllers\CharacterController;
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\MailExampleController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SelectGameController;
 use App\Http\Controllers\StageController;
@@ -77,3 +78,6 @@ Route::get('/answers/withStage', [AnswerController::class, 'getAnswersWithStage'
 // BADGES
 Route::get('/badges', [BadgeController::class, 'getBadges']);
 Route::get('/badges/withAnswers', [BadgeController::class, 'getBadgesWithAnswers']);
+
+// EMAILS
+Route::get('/sendEmail', [MailExampleController::class, 'sendExampleEmail']);
