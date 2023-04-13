@@ -18,4 +18,9 @@ class Stage extends Model
     {
         return $this->hasMany(Answer::class);
     }
+
+    public function game_stage()
+    {
+        return $this->hasMany(GameStage::class, 'game_stage');
+    }
 }

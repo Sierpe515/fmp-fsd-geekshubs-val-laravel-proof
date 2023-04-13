@@ -23,4 +23,9 @@ class Answer extends Model
     {
         return $this->belongsToMany(Game::class);
     }
+
+    public function game_stage()
+    {
+        return $this->hasMany(GameStage::class,  'game_stage');
+    }
 }

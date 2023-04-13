@@ -11,23 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('games_stages', function (Blueprint $table) {
+        Schema::create('games_badges', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('game_id');
             $table->foreign('game_id')
                 ->references('id')->on('games')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
-            $table->unsignedBigInteger('stage_id');
-            $table->foreign('stage_id')
-                ->references('id')->on('stages')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
-            $table->unsignedBigInteger('answer_id')
-                ->nullable()
-                ->unsigned();
-            $table->foreign('answer_id')
-                ->references('id')->on('answers')
+            $table->unsignedBigInteger('badge_id');
+            $table->foreign('badge_id')
+                ->references('id')->on('badges')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->timestamps();
@@ -39,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('games_stages');
+        Schema::dropIfExists('games_badges');
     }
 };

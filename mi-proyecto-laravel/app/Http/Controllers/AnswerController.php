@@ -12,6 +12,7 @@ class AnswerController extends Controller
         return $answer;
     }
 
+    // GET ANSWERS WITH STAGE AND BADGE
     public function getAnswersWithStage(){
         $answersWithStage = Answer::with('stage', 'badge')->get();
         return $answersWithStage;
