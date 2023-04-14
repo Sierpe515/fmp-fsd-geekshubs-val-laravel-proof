@@ -13,4 +13,9 @@ class Badge extends Model
     {
         return $this->hasMany(Answer::class);
     }
+
+    public function games()
+    {
+        return $this->belongsToMany(Game::class);
+    }
 }

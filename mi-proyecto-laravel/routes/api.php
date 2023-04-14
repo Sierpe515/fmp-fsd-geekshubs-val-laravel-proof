@@ -81,6 +81,8 @@ Route::get('/answers/withStage', [AnswerController::class, 'getAnswersWithStage'
 // BADGES
 Route::get('/badges', [BadgeController::class, 'getBadges']);
 Route::get('/badges/withAnswers', [BadgeController::class, 'getBadgesWithAnswers']);
+Route::post('/badges/add', [BadgeController::class, 'addBadgeToGame']);
+Route::put('/badges/consume', [BadgeController::class, 'consumeBadge']);
 
 // EMAILS
 Route::get('/sendEmail', [MailExampleController::class, 'sendExampleEmail']);
