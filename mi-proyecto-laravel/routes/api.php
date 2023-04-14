@@ -35,7 +35,8 @@ Route::middleware('auth:sanctum')->post('/logout', [AuthController::class, 'logo
 
 // USERS
 Route::get('/users', [UserController::class, 'getUsers']);
-Route::get('/users/withCharacters', [UserController::class, 'getUserByIdWithCharacters']);
+Route::get('/users/withCharacters', [UserController::class, 'getUsersWithCharacters']);
+Route::middleware('auth:sanctum')->get('/users/byIdwithCharacters', [UserController::class, 'getUserByIdWithCharacters']);
 Route::put('/users', [UserController::class, 'updateUser']);
 Route::middleware('auth:sanctum')->get('/users/profile', [UserController::class, 'getProfile']);
 Route::middleware('auth:sanctum')->put('/users/updateProfile', [UserController::class, 'updateProfile']);

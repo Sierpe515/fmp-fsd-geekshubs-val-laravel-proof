@@ -26,7 +26,7 @@ class UserController extends Controller
         return $users;
     }
 
-    public function getUserByIdWithCharacters(){
+    public function getUsersWithCharacters(){
         try {
             $userByIdWithCharacters = User::with(['characters'])->get();
 
@@ -40,6 +40,22 @@ class UserController extends Controller
                 'message' => $th->getMessage()],500);
         } 
     }
+
+    public function getUserByIdWithCharacters(){
+        try {
+            $userByIdWithCharacters = User::with(['characters'])->find(auth()->user()->id);
+
+            return [
+                'success' => true,
+                'data' => $userByIdWithCharacters
+            ];
+        } catch (\Throwable $th){
+            return response()->json([ 
+                'success' => false,
+                'message' => $th->getMessage()],500);
+        } 
+    }
+
 
     public function updateProfile(Request $request){
         try {
