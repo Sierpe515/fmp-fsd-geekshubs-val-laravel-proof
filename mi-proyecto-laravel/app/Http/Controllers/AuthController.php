@@ -63,7 +63,7 @@ class AuthController extends Controller
             'password' => 'required|string',
         ]);
 
-        $user = User::query()->where('email', $request['email'])->first();
+        $user = User::with('role')->where('email', $request['email'])->first();
             // Validamos si el usuario existe
             if (!$user) {
                 return response([
@@ -79,7 +79,8 @@ class AuthController extends Controller
 
         $res = [
             "success" => true, 
-            "message" => "User logged successfully", 
+            "message" => "User logged successfully",
+            "user" => $user, 
             "token" => $token];
 
         return response()->json($res, Response::HTTP_ACCEPTED);

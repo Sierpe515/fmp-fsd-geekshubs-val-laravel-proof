@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Character;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 
@@ -42,5 +43,23 @@ class CharacterController extends Controller
                 'success' => false,
                 'message' => "Error creating newCharacter"],500);
         }
+    }
+
+    public function getCharactersWithUsersByUserId(){
+        try {
+            // $charactersWithUsers = Character::where('user_id')->get();
+            $charactersWithUsers = DB::table('characters')
+                ->where('user_id', auth()->user()->id)
+                ->get();
+
+            return [
+                'success' => true,
+                'data' => $charactersWithUsers
+            ];
+        } catch (\Throwable $th){
+            return response()->json([ 
+                'success' => false,
+                'message' => $th->getMessage()],500);
+        } 
     }
 }

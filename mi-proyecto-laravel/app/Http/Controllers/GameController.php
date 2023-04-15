@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Game;
 use App\Models\GameStage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 
@@ -18,6 +19,28 @@ class GameController extends Controller
     public function getGamesWithSelectGame(){
         $users = Game::with('select_games')->get();
         return $users;
+    }
+
+    public function getGamesWithSelectGameByCharacter($id){
+        try {
+            // $gamesWithSelectGameByCharacter = DB::table('games')
+            //     ->where('character_id', $id)
+            //     // ->with('select_games')
+            //     ->get();
+            
+            $gamesWithSelectGameByCharacter = Game::with('select_games')
+            ->where('character_id', $id)
+            ->get();
+
+            return [
+                'success' => true,
+                'data' => $gamesWithSelectGameByCharacter
+            ];
+        } catch (\Throwable $th){
+            return response()->json([ 
+                'success' => false,
+                'message' => $th->getMessage()],500);
+        } 
     }
 
     public function createNewGame(Request $request){

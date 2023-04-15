@@ -56,8 +56,9 @@ Route::get('/roles/{id}', [RoleController::class, 'getRolesByIdWithUsers']);
 // CHARACTERS
 Route::group([
     'middleware' => 'auth:sanctum'
-    ], function () {
+], function () {
     Route::post('/characters/newCharacter', [CharacterController::class, 'createNewCharacters']);
+    Route::get('/characters', [CharacterController::class, 'getCharactersWithUsersByUserId']);
 });
 
 // SELECTGAMES
@@ -66,6 +67,7 @@ Route::get('/selectGames', [SelectGameController::class, 'getSelectGames']);
 
 // GAMES
 Route::get('/games/withSelectGames', [GameController::class, 'getGamesWithSelectGame']);
+Route::get('/games/byCharacter/{id}', [GameController::class, 'getGamesWithSelectGameByCharacter']);
 Route::get('/games', [GameController::class, 'getGames']);
 Route::middleware('auth:sanctum')->post('/games', [GameController::class, 'createNewGame']);
 Route::middleware('auth:sanctum')->post('/games/save', [GameController::class, 'createSavedGame']);
