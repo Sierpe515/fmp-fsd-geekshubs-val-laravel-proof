@@ -19,9 +19,9 @@ class Game extends Model
         return $this->belongsToMany(Stage::class);
     }
 
-    public function game_stage()
+    public function games_stages()
     {
-        return $this->hasMany(GameStage::class, 'game_stage');
+        return $this->hasMany(GameStage::class);
     }
 
     public function badges()

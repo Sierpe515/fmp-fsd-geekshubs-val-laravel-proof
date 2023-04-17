@@ -21,6 +21,16 @@ class GameController extends Controller
         return $users;
     }
 
+    public function getGamesWithGameStage(){
+        $users = Game::with('games_stages')->get();
+        return $users;
+    }
+
+    public function getGamesWithAllInfo(){
+        $users = Game::with('select_games', 'games_stages')->get();
+        return $users;
+    }
+
     public function getGamesWithSelectGameByCharacter($id){
         try {
             // $gamesWithSelectGameByCharacter = DB::table('games')
@@ -28,8 +38,30 @@ class GameController extends Controller
             //     // ->with('select_games')
             //     ->get();
             
-            $gamesWithSelectGameByCharacter = Game::with('select_games')
+            $gamesWithSelectGameByCharacter = Game::with('select_games', 'games_stages')
             ->where('character_id', $id)
+            ->get();
+
+            return [
+                'success' => true,
+                'data' => $gamesWithSelectGameByCharacter
+            ];
+        } catch (\Throwable $th){
+            return response()->json([ 
+                'success' => false,
+                'message' => $th->getMessage()],500);
+        } 
+    }
+
+    public function getGamesWithSelectGameById($id){
+        try {
+            // $gamesWithSelectGameByCharacter = DB::table('games')
+            //     ->where('character_id', $id)
+            //     // ->with('select_games')
+            //     ->get();
+            
+            $gamesWithSelectGameByCharacter = Game::with('select_games', 'games_stages')
+            ->where('id', $id)
             ->get();
 
             return [
