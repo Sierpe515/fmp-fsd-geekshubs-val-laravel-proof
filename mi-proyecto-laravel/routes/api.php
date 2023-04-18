@@ -74,6 +74,7 @@ Route::get('/games/byId/{id}', [GameController::class, 'getGamesWithSelectGameBy
 Route::get('/games', [GameController::class, 'getGames']);
 Route::middleware('auth:sanctum')->post('/games', [GameController::class, 'createNewGame']);
 Route::middleware('auth:sanctum')->put('/games/updateMadness', [GameController::class, 'updateMadnessGame']);
+Route::middleware('auth:sanctum')->put('/games/updateFinished', [GameController::class, 'updateFinishedGame']);
 Route::middleware('auth:sanctum')->post('/games/save', [GameController::class, 'createSavedGame']);
 Route::middleware('auth:sanctum')->put('/games/update', [GameController::class, 'updateSavedGame']);
 
