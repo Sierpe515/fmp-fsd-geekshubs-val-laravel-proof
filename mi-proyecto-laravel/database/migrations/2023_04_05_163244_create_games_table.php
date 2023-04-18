@@ -24,6 +24,8 @@ return new class extends Migration
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->enum('difficulty', ['easy','medium','hard']);
+            $table->integer('madness')->default(0);
+            $table->boolean('finished')->default(false);
             $table->timestamps();
         });
     }

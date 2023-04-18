@@ -20,6 +20,11 @@ class AnswersSeeder extends Seeder
                 'badge_id' => 1,
             ],
             [
+                'stage_id' => 1,
+                'answer' => "B",
+                'badge_id' => 1,
+            ],
+            [
                 'stage_id' => 2,
                 'answer' => "A",
                 'badge_id' => 2,

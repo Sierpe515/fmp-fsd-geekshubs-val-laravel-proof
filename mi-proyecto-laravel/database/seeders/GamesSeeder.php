@@ -18,16 +18,28 @@ class GamesSeeder extends Seeder
                 'character_id' => 1,
                 'select_game_id' => 1,
                 'difficulty' => "hard",
+                'madness' => 0,
+                'finished' => false,
+                'created_at' => "2023-04-15 14:52:14",
+                'updated_at' => "2023-04-15 14:52:14"
             ],
             [
                 'character_id' => 2,
                 'select_game_id' => 1,
                 'difficulty' => "medium",
+                'madness' => 0,
+                'finished' => false,
+                'created_at' => "2023-04-15 14:52:14",
+                'updated_at' => "2023-04-15 14:52:14"
             ],
             [
                 'character_id' => 3,
                 'select_game_id' => 1,
                 'difficulty' => "easy",
+                'madness' => 0,
+                'finished' => false,
+                'created_at' => "2023-04-15 14:52:14",
+                'updated_at' => "2023-04-15 14:52:14"
             ],
         ]);
     }
