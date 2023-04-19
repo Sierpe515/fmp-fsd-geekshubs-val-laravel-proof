@@ -48,7 +48,8 @@ class CharacterController extends Controller
     public function getCharactersWithUsersByUserId(){
         try {
             // $charactersWithUsers = Character::where('user_id')->get();
-            $charactersWithUsers = DB::table('characters')
+            // $charactersWithUsers = DB::table('characters')
+            $charactersWithUsers = Character::with('characters_images')
                 ->where('user_id', auth()->user()->id)
                 ->get();
 

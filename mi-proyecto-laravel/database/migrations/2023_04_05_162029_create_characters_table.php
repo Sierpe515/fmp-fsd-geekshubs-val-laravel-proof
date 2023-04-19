@@ -20,6 +20,13 @@ return new class extends Migration
                 ->onUpdate('cascade');
             $table->string('name');
             $table->enum('gender', ['male','female','undefined']);
+            $table->unsignedBigInteger('image_id')
+                ->nullable()
+                ->unsigned();
+            $table->foreign('image_id')
+                ->references('id')->on('characters_images')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->timestamps();
         });
     }

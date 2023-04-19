@@ -13,4 +13,9 @@ class Character extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function characters_images()
+    {
+        return $this->belongsTo(CharacterImage::class, 'image_id');
+    }
 }
