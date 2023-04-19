@@ -15,6 +15,10 @@ class CharactersImagesSeeder extends Seeder
     {
         DB::table('characters_images')->insert([
             [
+                'name' => "default",
+                'image' => "http://localhost:8000/images/default.png",
+            ],
+            [
                 'name' => "f1",
                 'image' => "http://localhost:8000/images/f1.png",
             ],

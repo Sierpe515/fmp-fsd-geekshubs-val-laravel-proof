@@ -54,10 +54,12 @@ Route::post('/newRole', [RoleController::class, 'createPrivilege']);
 Route::get('/roles/{id}', [RoleController::class, 'getRolesByIdWithUsers']);
 
 // CHARACTERS
+Route::get('/characters/images', [CharacterController::class, 'getCharactersImages']);
 Route::group([
     'middleware' => 'auth:sanctum'
 ], function () {
     Route::post('/characters/newCharacter', [CharacterController::class, 'createNewCharacters']);
+    Route::put('/characters/newCharacter', [CharacterController::class, 'updateCharacterImage']);
     Route::get('/characters', [CharacterController::class, 'getCharactersWithUsersByUserId']);
 });
 

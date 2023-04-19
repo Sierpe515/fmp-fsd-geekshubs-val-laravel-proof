@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Character;
+use App\Models\CharacterImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -45,6 +46,32 @@ class CharacterController extends Controller
         }
     }
 
+    public function updateCharacterImage(Request $request){
+        try {
+            Log::info("Updating character image");
+
+            // VALIDACION PARA COMPROBAR SI EL CHARACTER PERTENECE AL USER
+            // AUTOMATIZAR CAMPOS
+            $id = $request->input('id');
+            $image_id = $request->input('image_id');
+
+            $updateCharacterImage = Character::find($id);
+            // $updateMadnessValue->madness = $madness;
+            $updateCharacterImage->image_id = $image_id;
+            $updateCharacterImage->save();
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Character updated successfully',
+                'data' => $updateCharacterImage],200);
+        } catch (\Throwable $th){
+            Log::error('SAVING GAME: '.$th->getMessage());
+            return response()->json([ 
+                'success' => false,
+                'message' => "Error updating character"],500);
+        }
+    }
+
     public function getCharactersWithUsersByUserId(){
         try {
             // $charactersWithUsers = Character::where('user_id')->get();
@@ -62,5 +89,16 @@ class CharacterController extends Controller
                 'success' => false,
                 'message' => $th->getMessage()],500);
         } 
+    }
+
+    public function getCharactersImages(){
+        try {
+            $images = CharacterImage::where('id', '!=', 1)->get();
+            return $images;
+        } catch (\Throwable $th){
+            return response()->json([ 
+                'success' => false,
+                'message' => $th->getMessage()],500);
+        }
     }
 }
