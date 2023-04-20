@@ -19,6 +19,23 @@ class BadgeController extends Controller
         return $answersWithStage;
     }
 
+    public function getBadgesByGameId($id){
+        try {
+            $gamesWithSelectGameByCharacter = GameBadge::with('badge')
+            ->where('game_id', $id)
+            ->get();
+
+            return [
+                'success' => true,
+                'data' => $gamesWithSelectGameByCharacter
+            ];
+        } catch (\Throwable $th){
+            return response()->json([ 
+                'success' => false,
+                'message' => $th->getMessage()],500);
+        } 
+    }
+
     public function addBadgeToGame(Request $request){
         try {
             Log::info("Adding badge to game");

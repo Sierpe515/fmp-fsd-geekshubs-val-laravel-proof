@@ -119,13 +119,13 @@ class GameController extends Controller
 
             return response()->json([
                 'success' => true,
-                'message' => 'Saved game updated successfully',
+                'message' => 'madness at game updated successfully',
                 'data' => $updateMadnessValue],200);
         } catch (\Throwable $th){
             Log::error('SAVING GAME: '.$th->getMessage());
             return response()->json([ 
                 'success' => false,
-                'message' => "Error updating saved game"],500);
+                'message' => "Error updating madness at game"],500);
         }
     }
 
@@ -144,13 +144,38 @@ class GameController extends Controller
 
             return response()->json([
                 'success' => true,
-                'message' => 'Saved game updated successfully',
+                'message' => 'finished at game updated successfully',
                 'data' => $updateFinishedValue],200);
         } catch (\Throwable $th){
             Log::error('SAVING GAME: '.$th->getMessage());
             return response()->json([ 
                 'success' => false,
-                'message' => "Error updating saved game"],500);
+                'message' => "Error updating finished at game"],500);
+        }
+    }
+
+    public function updateGuideGame(Request $request){
+        try {
+            Log::info("Updating guide at game");
+
+            // VALIDACION PARA COMPROBAR SI EL CHARACTER PERTENECE AL USER
+            // AUTOMATIZAR CAMPOS
+            $id = $request->input('id');
+            $guide = $request->input('guide');
+
+            $updateGuideValue = Game::find($id);
+            $updateGuideValue->guide = $guide;
+            $updateGuideValue->save();
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Guide at game updated successfully',
+                'data' => $updateGuideValue],200);
+        } catch (\Throwable $th){
+            Log::error('SAVING GAME: '.$th->getMessage());
+            return response()->json([ 
+                'success' => false,
+                'message' => "Error updating guide at game"],500);
         }
     }
 
@@ -207,4 +232,20 @@ class GameController extends Controller
                 'message' => "Error updating saved game"],500);
         }
     }
+
+    public function deleteSavedGameByAdmin($id){
+        try {
+            Game::destroy($id);
+    
+            return response()->json([
+                'success' => true,
+                'message' => 'Game deleted'
+            ],200);
+        } catch (\Throwable $th){
+            return response()->json([ 
+                'success' => false,
+                'message' => $th->getMessage()],500);
+        }  
+    }
 }
+

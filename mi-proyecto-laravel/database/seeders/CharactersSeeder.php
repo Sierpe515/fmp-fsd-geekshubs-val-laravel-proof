@@ -18,7 +18,7 @@ class CharactersSeeder extends Seeder
                 'user_id' => 1,
                 'name' => "Sierpe",
                 'gender' => "male",
-                'image_id' => 3,
+                'image_id' => 13,
             ],
             [
                 'user_id' => 2,

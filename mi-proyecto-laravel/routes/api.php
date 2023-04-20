@@ -77,8 +77,14 @@ Route::get('/games', [GameController::class, 'getGames']);
 Route::middleware('auth:sanctum')->post('/games', [GameController::class, 'createNewGame']);
 Route::middleware('auth:sanctum')->put('/games/updateMadness', [GameController::class, 'updateMadnessGame']);
 Route::middleware('auth:sanctum')->put('/games/updateFinished', [GameController::class, 'updateFinishedGame']);
+Route::middleware('auth:sanctum')->put('/games/updateGuide', [GameController::class, 'updateGuideGame']);
 Route::middleware('auth:sanctum')->post('/games/save', [GameController::class, 'createSavedGame']);
 Route::middleware('auth:sanctum')->put('/games/update', [GameController::class, 'updateSavedGame']);
+Route::group([
+    'middleware' => ['auth:sanctum','admin']
+], function () {
+    Route::delete('/games/delete/{id}', [GameController::class, 'deleteSavedGameByAdmin']);
+});
 
 // STAGES
 Route::get('/stages', [StageController::class, 'getStages']);
@@ -91,6 +97,7 @@ Route::get('/answers/withStage', [AnswerController::class, 'getAnswersWithStage'
 // BADGES
 Route::get('/badges', [BadgeController::class, 'getBadges']);
 Route::get('/badges/withAnswers', [BadgeController::class, 'getBadgesWithAnswers']);
+Route::get('/badges/ByGameId/{id}', [BadgeController::class, 'getBadgesByGameId']);
 Route::post('/badges/add', [BadgeController::class, 'addBadgeToGame']);
 Route::put('/badges/consume', [BadgeController::class, 'consumeBadge']);
 
