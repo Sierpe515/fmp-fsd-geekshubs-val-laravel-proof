@@ -47,6 +47,12 @@ Route::group([
         Route::delete('/users/{id}', [UserController::class, 'deleteUserByAdmin']);
         Route::put('/users/updateRole/{id}', [UserController::class, 'updateUserRoleByAdmin']);
 });
+//USERS: UPDATE PROFILE
+Route::middleware('auth:sanctum')->put('/users/profile/userName', [UserController::class, 'updateUserName']);
+Route::middleware('auth:sanctum')->put('/users/profile/name', [UserController::class, 'updateName']);
+Route::middleware('auth:sanctum')->put('/users/profile/surname', [UserController::class, 'updateSurname']);
+Route::middleware('auth:sanctum')->put('/users/profile/email', [UserController::class, 'updateEmail']);
+Route::middleware('auth:sanctum')->put('/users/profile/birthdate', [UserController::class, 'updateBirthdate']);
 
 
 // ROLES

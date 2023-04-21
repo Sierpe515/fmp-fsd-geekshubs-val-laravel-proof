@@ -159,4 +159,194 @@ class UserController extends Controller
                 'message' => $th->getMessage()],500);
         } 
     }
+
+    public function updateUserName(Request $request){
+        try {
+            $user = User::find(auth()->user()->id);
+
+            $validator = Validator::make($request->all(),[
+                'userName' => 'required|string|unique:users,userName|regex:/^[a-zA-Z0-9 ]*$/|max:20',
+            ]);
+
+            if ($validator->fails()){
+                return response()->json($validator->errors(),400);
+            }
+
+            if(!$user) {
+                return response()->json([
+                    'success' => true,
+                    'message' => 'User does not exist',
+                ],404);                
+            }
+
+            $userName = $request->input('userName');
+
+            if(isset($userName)){
+                $user->userName =$request->input('userName');
+            }
+
+            $user->save();
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Role updated',
+                'data' => $user],200);
+        } catch (\Throwable $th){
+            return response()->json([ 
+                'success' => false,
+                'message' => $th->getMessage()],500);
+        } 
+    }
+
+    public function updateName(Request $request){
+        try {
+            $user = User::find(auth()->user()->id);
+
+            $validator = Validator::make($request->all(),[
+                'name' => 'string|regex:/^[a-zA-Z0-9 ]*$/|max:20',
+            ]);
+
+            if ($validator->fails()){
+                return response()->json($validator->errors(),400);
+            }
+
+            if(!$user) {
+                return response()->json([
+                    'success' => true,
+                    'message' => 'User does not exist',
+                ],404);                
+            }
+
+            $name = $request->input('name');
+
+            if(isset($name)){
+                $user->name =$request->input('name');
+            }
+
+            $user->save();
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Role updated',
+                'data' => $user],200);
+        } catch (\Throwable $th){
+            return response()->json([ 
+                'success' => false,
+                'message' => $th->getMessage()],500);
+        } 
+    }
+
+    public function updateSurname(Request $request){
+        try {
+            $user = User::find(auth()->user()->id);
+
+            $validator = Validator::make($request->all(),[
+                'surname' => 'string|regex:/^[a-zA-Z0-9 ]*$/|max:20',
+            ]);
+
+            if ($validator->fails()){
+                return response()->json($validator->errors(),400);
+            }
+
+            if(!$user) {
+                return response()->json([
+                    'success' => true,
+                    'message' => 'User does not exist',
+                ],404);                
+            }
+
+            $surname = $request->input('surname');
+
+            if(isset($surname)){
+                $user->surname =$request->input('surname');
+            }
+
+            $user->save();
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Role updated',
+                'data' => $user],200);
+        } catch (\Throwable $th){
+            return response()->json([ 
+                'success' => false,
+                'message' => $th->getMessage()],500);
+        } 
+    }
+
+    public function updateEmail(Request $request){
+        try {
+            $user = User::find(auth()->user()->id);
+
+            $validator = Validator::make($request->all(),[
+                'email' => 'required|string|unique:users,email|regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/|max:40',
+            ]);
+
+            if ($validator->fails()){
+                return response()->json($validator->errors(),400);
+            }
+
+            if(!$user) {
+                return response()->json([
+                    'success' => true,
+                    'message' => 'User does not exist',
+                ],404);                
+            }
+
+            $email = $request->input('email');
+
+            if(isset($email)){
+                $user->email =$request->input('email');
+            }
+
+            $user->save();
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Role updated',
+                'data' => $user],200);
+        } catch (\Throwable $th){
+            return response()->json([ 
+                'success' => false,
+                'message' => $th->getMessage()],500);
+        } 
+    }
+
+    public function updateBirthdate(Request $request){
+        try {
+            $user = User::find(auth()->user()->id);
+
+            $validator = Validator::make($request->all(),[
+                'birthdate' => 'date'
+            ]);
+
+            if ($validator->fails()){
+                return response()->json($validator->errors(),400);
+            }
+
+            if(!$user) {
+                return response()->json([
+                    'success' => true,
+                    'message' => 'User does not exist',
+                ],404);                
+            }
+
+            $birthdate = $request->input('birthdate');
+
+            if(isset($birthdate)){
+                $user->birthdate =$request->input('birthdate');
+            }
+
+            $user->save();
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Role updated',
+                'data' => $user],200);
+        } catch (\Throwable $th){
+            return response()->json([ 
+                'success' => false,
+                'message' => $th->getMessage()],500);
+        } 
+    }
 }
