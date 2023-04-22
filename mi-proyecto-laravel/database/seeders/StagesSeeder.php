@@ -21,7 +21,19 @@ class StagesSeeder extends Seeder
             [
                 'name' => "Entrance",
                 'code' => "2-1",
-            ]
+            ],
+            [
+                'name' => "Fail1",
+                'code' => "3-1",
+            ],
+            [
+                'name' => "Success",
+                'code' => "3-2",
+            ],
+            [
+                'name' => "Fail2",
+                'code' => "3-3",
+            ],
         ]);
     }
 }

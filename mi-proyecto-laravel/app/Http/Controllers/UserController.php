@@ -63,12 +63,12 @@ class UserController extends Controller
 
             // ToDo TryCatch
             $validator = Validator::make($request->all(),[
-                'userName' => 'required|string|unique:users,userName|regex:/^[a-zA-Z0-9 ]*$/|max:20',
+                'userName' => 'string|unique:users,userName|regex:/^[a-zA-Z0-9 ]*$/|max:20',
                 'name' => 'string|regex:/^[a-zA-Z0-9 ]*$/|max:20',
                 'surname' => 'string|regex:/^[a-zA-Z0-9 ]*$/|max:20',
-                'email' => 'required|string|regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/|max:40',
+                'email' => 'string|regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/|max:40',
                 //Añadir unique a email y a userName
-                'password' => ['required', Password::min(6)->mixedCase()->letters()->numbers(),],
+                'password' => [Password::min(6)->mixedCase()->letters()->numbers(),],
                 'birthdate' => 'date',
             ]);
 

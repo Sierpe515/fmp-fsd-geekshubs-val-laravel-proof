@@ -98,6 +98,7 @@ Route::get('/stages/withAnswers', [StageController::class, 'getStagesWithAnswers
 
 // ANSWERS
 Route::get('/answers', [AnswerController::class, 'getAnswers']);
+Route::get('/answers/{id}', [AnswerController::class, 'getAnswersById']);
 Route::get('/answers/withStage', [AnswerController::class, 'getAnswersWithStage']);
 
 // BADGES

@@ -17,4 +17,11 @@ class AnswerController extends Controller
         $answersWithStage = Answer::with('stage', 'badge')->get();
         return $answersWithStage;
     }
+
+    public function getAnswersById($id){
+        $answersWithStage = Answer::with('stage', 'badge')
+        ->where('id', $id)
+        ->get();
+        return $answersWithStage;
+    }
 }
