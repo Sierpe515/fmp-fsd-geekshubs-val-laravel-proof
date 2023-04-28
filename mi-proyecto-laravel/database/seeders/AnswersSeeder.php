@@ -98,6 +98,60 @@ class AnswersSeeder extends Seeder
                 'badge_id' => 1,
                 'success' => "No"
             ],
+            [
+                'stage_id' => 6,
+                'answer' => "A",
+                'badge_id' => 1,
+                'success' => "No"
+            ],
+            [
+                'stage_id' => 6,
+                'answer' => "B",
+                'badge_id' => 1,
+                'success' => "Yes"
+            ],
+            [
+                'stage_id' => 6,
+                'answer' => "C",
+                'badge_id' => 1,
+                'success' => "No"
+            ],
+            [
+                'stage_id' => 7,
+                'answer' => "A",
+                'badge_id' => 1,
+                'success' => "No"
+            ],
+            [
+                'stage_id' => 7,
+                'answer' => "B",
+                'badge_id' => 1,
+                'success' => "Yes"
+            ],
+            [
+                'stage_id' => 7,
+                'answer' => "C",
+                'badge_id' => 1,
+                'success' => "No"
+            ],
+            [
+                'stage_id' => 8,
+                'answer' => "A",
+                'badge_id' => 1,
+                'success' => "No"
+            ],
+            [
+                'stage_id' => 8,
+                'answer' => "B",
+                'badge_id' => 1,
+                'success' => "No"
+            ],
+            [
+                'stage_id' => 8,
+                'answer' => "C",
+                'badge_id' => 1,
+                'success' => "Yes"
+            ],
         ]);
     }
 }

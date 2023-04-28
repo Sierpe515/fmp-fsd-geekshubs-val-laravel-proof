@@ -46,6 +46,18 @@ class StagesSeeder extends Seeder
                 'name' => "nose4-3",
                 'code' => "4-3",
             ],
+            [
+                'name' => "nose5-1",
+                'code' => "5-1",
+            ],
+            [
+                'name' => "nose5-2",
+                'code' => "5-2",
+            ],
+            [
+                'name' => "nose5-3",
+                'code' => "5-3",
+            ],
         ]);
     }
 }
