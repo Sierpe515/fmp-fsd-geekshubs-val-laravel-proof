@@ -24,6 +24,7 @@ return new class extends Migration
                 ->references('id')->on('badges')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
+            $table->string('success');
             $table->timestamps();
         });
     }

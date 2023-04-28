@@ -17,10 +17,12 @@ class BadgesSeeder extends Seeder
             [
             'name' => "None",
             'type' => "None",
+            'image' => ""
             ],
             [
             'name' => "First Success",
             'type' => "Normal",
+            'image' => "http://localhost:8000/images/badges/b7.png"
             ],
         ]);
     }

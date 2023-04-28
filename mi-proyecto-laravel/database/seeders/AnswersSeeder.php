@@ -18,26 +18,85 @@ class AnswersSeeder extends Seeder
                 'stage_id' => 1,
                 'answer' => "A",
                 'badge_id' => 1,
+                'success' => "Yes"
             ],
             [
                 'stage_id' => 1,
                 'answer' => "B",
                 'badge_id' => 1,
+                'success' => "No"
             ],
             [
                 'stage_id' => 2,
                 'answer' => "A",
                 'badge_id' => 2,
+                'success' => "Yes"
             ],
             [
                 'stage_id' => 2,
                 'answer' => "B",
                 'badge_id' => 1,
+                'success' => "No"
             ],
             [
                 'stage_id' => 2,
                 'answer' => "C",
                 'badge_id' => 1,
+                'success' => "No"
+            ],
+            [
+                'stage_id' => 3,
+                'answer' => "C",
+                'badge_id' => 1,
+                'success' => "Yes"
+            ],
+            [
+                'stage_id' => 3,
+                'answer' => "A",
+                'badge_id' => 1,
+                'success' => "No"
+            ],
+            [
+                'stage_id' => 3,
+                'answer' => "B",
+                'badge_id' => 1,
+                'success' => "No"
+            ],
+            [
+                'stage_id' => 4,
+                'answer' => "A",
+                'badge_id' => 1,
+                'success' => "No"
+            ],
+            [
+                'stage_id' => 4,
+                'answer' => "B",
+                'badge_id' => 2,
+                'success' => "Yes"
+            ],
+            [
+                'stage_id' => 4,
+                'answer' => "C",
+                'badge_id' => 1,
+                'success' => "No"
+            ],
+            [
+                'stage_id' => 5,
+                'answer' => "A",
+                'badge_id' => 2,
+                'success' => "Yes"
+            ],
+            [
+                'stage_id' => 5,
+                'answer' => "B",
+                'badge_id' => 1,
+                'success' => "No"
+            ],
+            [
+                'stage_id' => 5,
+                'answer' => "C",
+                'badge_id' => 1,
+                'success' => "No"
             ],
         ]);
     }
