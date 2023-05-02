@@ -22,9 +22,10 @@ class BadgeController extends Controller
     // GET BADGES BY GAME ID EXCEPT BADGE ID 1
     public function getBadgesByGameId($id){
         try {
-            $gamesWithSelectGameByCharacter = GameBadge::with('badge')
+            $gamesWithSelectGameByCharacter = GameBadge::with('game','badge')
             ->where('game_id', $id)
             ->whereNot('badge_id', 1)
+            ->whereNot('isActive', 0)
             ->get();
 
             return [

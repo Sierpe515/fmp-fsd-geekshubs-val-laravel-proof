@@ -21,8 +21,13 @@ class BadgesSeeder extends Seeder
             ],
             [
             'name' => "First Success",
-            'type' => "Normal",
-            'image' => "http://localhost:8000/images/badges/b7.png"
+            'type' => "Clue",
+            'image' => "http://localhost:8000/images/badges/b4.png"
+            ],
+            [
+            'name' => "Final help",
+            'type' => "Clue",
+            'image' => "http://localhost:8000/images/badges/b2.png"
             ],
         ]);
     }

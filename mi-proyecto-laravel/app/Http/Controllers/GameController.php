@@ -40,6 +40,7 @@ class GameController extends Controller
             
             $gamesWithSelectGameByCharacter = Game::with('select_games', 'games_stages')
             ->where('character_id', $id)
+            ->where('finished', '!=', 1)
             ->get();
 
             return [

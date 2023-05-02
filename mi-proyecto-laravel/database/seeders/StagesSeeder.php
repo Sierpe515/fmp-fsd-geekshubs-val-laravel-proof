@@ -19,56 +19,68 @@ class StagesSeeder extends Seeder
                 'code' => "1-1",
             ],
             [
-                'name' => "Sierpes",
+                'name' => "Turks city",
                 'code' => "2-1",
             ],
             [
-                'name' => "Demons",
+                'name' => "Izakura",
                 'code' => "3-1",
             ],
             [
-                'name' => "nose3-2",
+                'name' => "Floating Islands",
                 'code' => "3-2",
             ],
             [
-                'name' => "nose3-3",
+                'name' => "Darkest dungeon",
                 'code' => "3-3",
             ],
             [
-                'name' => "nose4-1",
+                'name' => "Transildream",
                 'code' => "4-1",
             ],
             [
-                'name' => "nose4-2",
+                'name' => "Netherland",
                 'code' => "4-2",
             ],
             [
-                'name' => "nose4-3",
+                'name' => "Bahava",
                 'code' => "4-3",
             ],
             [
-                'name' => "nose5-1",
+                'name' => "Ghostship",
                 'code' => "5-1",
             ],
             [
-                'name' => "nose5-2",
+                'name' => "Mouse in the forest",
                 'code' => "5-2",
             ],
             [
-                'name' => "nose5-3",
+                'name' => "The dam",
                 'code' => "5-3",
             ],
             [
-                'name' => "nose6-1",
+                'name' => "Cattegat",
                 'code' => "6-1",
             ],
             [
-                'name' => "nose6-2",
+                'name' => "Goat dungeon",
                 'code' => "6-2",
             ],
             [
-                'name' => "nose6-3",
+                'name' => "the judgment of death",
                 'code' => "6-3",
+            ],
+            [
+                'name' => "Final1",
+                'code' => "7-1",
+            ],
+            [
+                'name' => "Final2",
+                'code' => "7-2",
+            ],
+            [
+                'name' => "Final3",
+                'code' => "7-3",
             ],
         ]);
     }

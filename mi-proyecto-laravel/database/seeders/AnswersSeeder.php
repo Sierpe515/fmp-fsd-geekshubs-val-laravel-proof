@@ -166,8 +166,8 @@ class AnswersSeeder extends Seeder
             ],
             [
                 'stage_id' => 9,
-                'answer' => "B",
-                'badge_id' => 1,
+                'answer' => "C",
+                'badge_id' => 3,
                 'success' => "Yes"
             ],
             [
@@ -185,7 +185,7 @@ class AnswersSeeder extends Seeder
             [
                 'stage_id' => 10,
                 'answer' => "C",
-                'badge_id' => 1,
+                'badge_id' => 3,
                 'success' => "Yes"
             ],
             [
@@ -203,8 +203,44 @@ class AnswersSeeder extends Seeder
             [
                 'stage_id' => 11,
                 'answer' => "C",
+                'badge_id' => 3,
+                'success' => "Yes"
+            ],
+            [
+                'stage_id' => 12,
+                'answer' => "A",
                 'badge_id' => 1,
                 'success' => "Yes"
+            ],
+            [
+                'stage_id' => 12,
+                'answer' => "B",
+                'badge_id' => 1,
+                'success' => "No"
+            ],
+            [
+                'stage_id' => 13,
+                'answer' => "A",
+                'badge_id' => 1,
+                'success' => "Yes"
+            ],
+            [
+                'stage_id' => 13,
+                'answer' => "B",
+                'badge_id' => 1,
+                'success' => "No"
+            ],
+            [
+                'stage_id' => 14,
+                'answer' => "A",
+                'badge_id' => 1,
+                'success' => "Yes"
+            ],
+            [
+                'stage_id' => 14,
+                'answer' => "B",
+                'badge_id' => 1,
+                'success' => "No"
             ],
         ]);
     }

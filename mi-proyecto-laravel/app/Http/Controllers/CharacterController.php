@@ -101,4 +101,19 @@ class CharacterController extends Controller
                 'message' => $th->getMessage()],500);
         }
     }
+
+    public function deleteCharacterById($id){
+        try {
+            Character::destroy($id);
+    
+            return response()->json([
+                'success' => true,
+                'message' => 'Character deleted'
+            ],200);
+        } catch (\Throwable $th){
+            return response()->json([ 
+                'success' => false,
+                'message' => $th->getMessage()],500);
+        }  
+    }
 }

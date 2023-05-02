@@ -23,7 +23,7 @@ return new class extends Migration
                 ->references('id')->on('select_games')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
-            $table->enum('difficulty', ['easy','medium','hard']);
+            $table->enum('difficulty', ['easy','medium','hard'])->default('easy');
             $table->enum('guide', ['legal','chaotic'])->nullable();
             $table->integer('madness')->default(0);
             $table->boolean('finished')->default(false);

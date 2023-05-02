@@ -67,6 +67,7 @@ Route::group([
     Route::post('/characters/newCharacter', [CharacterController::class, 'createNewCharacters']);
     Route::put('/characters/newCharacter', [CharacterController::class, 'updateCharacterImage']);
     Route::get('/characters', [CharacterController::class, 'getCharactersWithUsersByUserId']);
+    Route::delete('/characters/delete/{id}', [CharacterController::class, 'deleteCharacterById']);
 });
 
 // SELECTGAMES
