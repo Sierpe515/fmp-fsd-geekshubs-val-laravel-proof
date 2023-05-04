@@ -63,6 +63,18 @@ class CharactersImagesSeeder extends Seeder
                 'image' => "http://localhost:8000/images/f11.png",
             ],
             [
+                'name' => "f12",
+                'image' => "http://localhost:8000/images/f12.png",
+            ],
+            [
+                'name' => "f13",
+                'image' => "http://localhost:8000/images/f13.png",
+            ],
+            [
+                'name' => "f14",
+                'image' => "http://localhost:8000/images/f14.png",
+            ],
+            [
                 'name' => "m1",
                 'image' => "http://localhost:8000/images/m1.png",
             ],
@@ -105,6 +117,14 @@ class CharactersImagesSeeder extends Seeder
             [
                 'name' => "m11",
                 'image' => "http://localhost:8000/images/m11.png",
+            ],
+            [
+                'name' => "m12",
+                'image' => "http://localhost:8000/images/m12.png",
+            ],
+            [
+                'name' => "m13",
+                'image' => "http://localhost:8000/images/m13.png",
             ],
         ]);
     }
