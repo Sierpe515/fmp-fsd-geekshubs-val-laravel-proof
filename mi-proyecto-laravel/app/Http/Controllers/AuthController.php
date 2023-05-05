@@ -21,15 +21,12 @@ class AuthController extends Controller
             $request->validate([
                 'userName' => 'required|string|unique:users,userName|regex:/^[a-zA-Z0-9 ]*$/|max:20',
                 'email' => 'required|string|unique:users,email|regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/|max:40',
-                // 'password' => 'required|string|min:6|max:12',
                 'password' => ['required', Password::min(6)->mixedCase()->letters()->numbers(),]
             ]);
 
             $user = User::create([
-                // 'role_id' => $request[2],
                 'userName' => $request['userName'],
                 'email' => $request['email'],
-                // 'role_id' => self::ROLE_USER,
                 'password' => bcrypt($request['password'])
             ]);
 
@@ -57,21 +54,18 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         try {
-            // ToDo TryCatch
         $request->validate([
             'email' => 'required|string',
             'password' => 'required|string',
         ]);
 
         $user = User::with('role')->where('email', $request['email'])->first();
-            // Validamos si el usuario existe
             if (!$user) {
                 return response([
                     "success" => false, 
                     "message" => "Email or password are invalid",
                 ], Response::HTTP_NOT_FOUND);
             }
-            // Validamos la contraseña
             if (!Hash::check($request['password'], $user->password)) {
                 return response(["success" => true, "message" => "Email or password are invalid"], Response::HTTP_NOT_FOUND);
             }

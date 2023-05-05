@@ -32,12 +32,7 @@ class GameController extends Controller
     }
 
     public function getGamesWithSelectGameByCharacter($id){
-        try {
-            // $gamesWithSelectGameByCharacter = DB::table('games')
-            //     ->where('character_id', $id)
-            //     // ->with('select_games')
-            //     ->get();
-            
+        try { 
             $gamesWithSelectGameByCharacter = Game::with('select_games', 'games_stages')
             ->where('character_id', $id)
             ->where('finished', '!=', 1)
@@ -55,12 +50,7 @@ class GameController extends Controller
     }
 
     public function getGamesWithSelectGameById($id){
-        try {
-            // $gamesWithSelectGameByCharacter = DB::table('games')
-            //     ->where('character_id', $id)
-            //     // ->with('select_games')
-            //     ->get();
-            
+        try {          
             $gamesWithSelectGameByCharacter = Game::with('select_games', 'games_stages')
             ->where('id', $id)
             ->get();
@@ -80,8 +70,6 @@ class GameController extends Controller
         try {
             Log::info("Creating new game");
 
-            // VALIDACION PARA COMPROBAR SI EL CHARACTER PERTENECE AL USER
-            // AUTOMATIZAR CAMPOS
             $characterId = $request->input('character_id');
             $selectGameId = $request->input('select_game_id');
             $difficulty = $request->input('difficulty');
@@ -108,13 +96,10 @@ class GameController extends Controller
         try {
             Log::info("Updating madness at game");
 
-            // VALIDACION PARA COMPROBAR SI EL CHARACTER PERTENECE AL USER
-            // AUTOMATIZAR CAMPOS
             $id = $request->input('id');
             $madness = $request->input('madness');
 
             $updateMadnessValue = Game::find($id);
-            // $updateMadnessValue->madness = $madness;
             $updateMadnessValue->madness += $madness;
             $updateMadnessValue->save();
 
@@ -134,8 +119,6 @@ class GameController extends Controller
         try {
             Log::info("Updating finished at game");
 
-            // VALIDACION PARA COMPROBAR SI EL CHARACTER PERTENECE AL USER
-            // AUTOMATIZAR CAMPOS
             $id = $request->input('id');
             $finished = $request->input('finished');
 
@@ -159,8 +142,6 @@ class GameController extends Controller
         try {
             Log::info("Updating guide at game");
 
-            // VALIDACION PARA COMPROBAR SI EL CHARACTER PERTENECE AL USER
-            // AUTOMATIZAR CAMPOS
             $id = $request->input('id');
             $guide = $request->input('guide');
 
@@ -184,8 +165,6 @@ class GameController extends Controller
         try {
             Log::info("Saving game");
 
-            // VALIDACION PARA COMPROBAR SI EL CHARACTER PERTENECE AL USER
-            // AUTOMATIZAR CAMPOS
             $gameId = $request->input('game_id');
             $stageId = $request->input('stage_id');
             $answerId = $request->input('answer_id');
@@ -213,8 +192,6 @@ class GameController extends Controller
         try {
             Log::info("Updating saved game");
 
-            // VALIDACION PARA COMPROBAR SI EL CHARACTER PERTENECE AL USER
-            // AUTOMATIZAR CAMPOS
             $id = $request->input('id');
             $answerId = $request->input('answer_id');
 

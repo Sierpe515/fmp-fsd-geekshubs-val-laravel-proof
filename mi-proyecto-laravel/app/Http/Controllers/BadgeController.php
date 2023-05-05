@@ -43,7 +43,6 @@ class BadgeController extends Controller
         try {
             Log::info("Adding badge to game");
 
-            // AUTOMATIZAR CAMPOS
             $gameId = $request->input('game_id');
             $badgeId = $request->input('badge_id');
 
@@ -64,27 +63,10 @@ class BadgeController extends Controller
         }
     }
 
-    // public function consumeBadge($id){
-    //     try {
-    //         GameBadge::destroy($id);
-
-    //         return response()->json([
-    //             'success' => true,
-    //             'message' => 'Badge consumed'
-    //         ],200);
-    //     } catch (\Throwable $th){
-    //         return response()->json([ 
-    //             'success' => false,
-    //             'message' => $th->getMessage()],500);
-    //     }  
-    // }
-
     public function consumeBadge(Request $request){
         try {
             Log::info("Consuming badge to game");
 
-            // VALIDACION PARA COMPROBAR SI EL CHARACTER PERTENECE AL USER
-            // AUTOMATIZAR CAMPOS
             $id = $request->input('id');
             $isActive = false;
 

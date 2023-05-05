@@ -50,13 +50,10 @@ class CharacterController extends Controller
         try {
             Log::info("Updating character image");
 
-            // VALIDACION PARA COMPROBAR SI EL CHARACTER PERTENECE AL USER
-            // AUTOMATIZAR CAMPOS
             $id = $request->input('id');
             $image_id = $request->input('image_id');
 
             $updateCharacterImage = Character::find($id);
-            // $updateMadnessValue->madness = $madness;
             $updateCharacterImage->image_id = $image_id;
             $updateCharacterImage->save();
 
@@ -74,8 +71,7 @@ class CharacterController extends Controller
 
     public function getCharactersWithUsersByUserId(){
         try {
-            // $charactersWithUsers = Character::where('user_id')->get();
-            // $charactersWithUsers = DB::table('characters')
+
             $charactersWithUsers = Character::with('characters_images')
                 ->where('user_id', auth()->user()->id)
                 ->get();
