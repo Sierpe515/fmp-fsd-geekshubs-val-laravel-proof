@@ -270,7 +270,7 @@ This endpoint obtains the information from the user id through a token.
         ``` bash
         {
             "id": 1,
-   	"image_id": 2
+   	    "image_id": 2
         }
 
         ```
