@@ -1,7 +1,8 @@
 # fmp-fsd-geekshubs-val-laravel-final project
 
 # Welcome to final project backend app
-<p align="center"><img src="./img/headerpict.jpg"/></p> 
+
+![headerpict](https://user-images.githubusercontent.com/121863208/236692576-dec2c97c-913a-48c5-a19a-427d64c45794.jpg)
 
 <details>
   <summary>Index</summary>
