@@ -185,6 +185,9 @@ We have organised all other endpoints by model, to see which actions we can do i
         }
         ```
 Fill the fields separately is also possible, without needing to modify or update all of them. Endpoints for this have been created, example:
+	
+- Update Profile UserName:
+   - Update and fill useName field inside the user’s profile:
 
             PUT:   https://laravel-proof-production.up.railway.app/api/users/profile/userName
         body:
@@ -258,10 +261,12 @@ This endpoint obtains the information from the user id through a token.
     - Obtains a list of all users’ characters mentioned through a token. 
 
             GET:   https://laravel-proof-production.up.railway.app/api/characters
+	
 - Get character images: 
     - Obtains every image associated with the character. 
   
             GET:   https://laravel-proof-production.up.railway.app/api/characters/images
+	
 - Update character images: 
     - Updates the image associated to a character.
   
@@ -274,6 +279,7 @@ This endpoint obtains the information from the user id through a token.
         }
 
         ```
+	
 - Delete Character: 
     - Deletes a carácter by Id. This endpoint only can be executed by an Admin.
   
