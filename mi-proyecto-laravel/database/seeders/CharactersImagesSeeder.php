@@ -16,115 +16,115 @@ class CharactersImagesSeeder extends Seeder
         DB::table('characters_images')->insert([
             [
                 'name' => "default",
-                'image' => "http://localhost:8000/images/default.png",
+                'image' => "https://laravel-proof-production.up.railway.app/images/default.png",
             ],
             [
                 'name' => "f1",
-                'image' => "http://localhost:8000/images/f1.png",
+                'image' => "https://laravel-proof-production.up.railway.app/images/f1.png",
             ],
             [
                 'name' => "f2",
-                'image' => "http://localhost:8000/images/f2.png",
+                'image' => "https://laravel-proof-production.up.railway.app/images/f2.png",
             ],
             [
                 'name' => "f3",
-                'image' => "http://localhost:8000/images/f3.png",
+                'image' => "https://laravel-proof-production.up.railway.app/images/f3.png",
             ],
             [
                 'name' => "f4",
-                'image' => "http://localhost:8000/images/f4.png",
+                'image' => "https://laravel-proof-production.up.railway.app/images/f4.png",
             ],
             [
                 'name' => "f5",
-                'image' => "http://localhost:8000/images/f5.png",
+                'image' => "https://laravel-proof-production.up.railway.app/images/f5.png",
             ],
             [
                 'name' => "f6",
-                'image' => "http://localhost:8000/images/f6.png",
+                'image' => "https://laravel-proof-production.up.railway.app/images/f6.png",
             ],
             [
                 'name' => "f7",
-                'image' => "http://localhost:8000/images/f7.png",
+                'image' => "https://laravel-proof-production.up.railway.app/images/f7.png",
             ],
             [
                 'name' => "f8",
-                'image' => "http://localhost:8000/images/f8.png",
+                'image' => "https://laravel-proof-production.up.railway.app/images/f8.png",
             ],
             [
                 'name' => "f9",
-                'image' => "http://localhost:8000/images/f9.png",
+                'image' => "https://laravel-proof-production.up.railway.app/images/f9.png",
             ],
             [
                 'name' => "f10",
-                'image' => "http://localhost:8000/images/f10.png",
+                'image' => "https://laravel-proof-production.up.railway.app/images/f10.png",
             ],
             [
                 'name' => "f11",
-                'image' => "http://localhost:8000/images/f11.png",
+                'image' => "https://laravel-proof-production.up.railway.app/images/f11.png",
             ],
             [
                 'name' => "f12",
-                'image' => "http://localhost:8000/images/f12.png",
+                'image' => "https://laravel-proof-production.up.railway.app/images/f12.png",
             ],
             [
                 'name' => "f13",
-                'image' => "http://localhost:8000/images/f13.png",
+                'image' => "https://laravel-proof-production.up.railway.app/images/f13.png",
             ],
             [
                 'name' => "f14",
-                'image' => "http://localhost:8000/images/f14.png",
+                'image' => "https://laravel-proof-production.up.railway.app/images/f14.png",
             ],
             [
                 'name' => "m1",
-                'image' => "http://localhost:8000/images/m1.png",
+                'image' => "https://laravel-proof-production.up.railway.app/images/m1.png",
             ],
             [
                 'name' => "m2",
-                'image' => "http://localhost:8000/images/m2.png",
+                'image' => "https://laravel-proof-production.up.railway.app/images/m2.png",
             ],
             [
                 'name' => "m3",
-                'image' => "http://localhost:8000/images/m3.png",
+                'image' => "https://laravel-proof-production.up.railway.app/images/m3.png",
             ],
             [
                 'name' => "m4",
-                'image' => "http://localhost:8000/images/m4.png",
+                'image' => "https://laravel-proof-production.up.railway.app/images/m4.png",
             ],
             [
                 'name' => "m5",
-                'image' => "http://localhost:8000/images/m5.png",
+                'image' => "https://laravel-proof-production.up.railway.app/images/m5.png",
             ],
             [
                 'name' => "m6",
-                'image' => "http://localhost:8000/images/m6.png",
+                'image' => "https://laravel-proof-production.up.railway.app/images/m6.png",
             ],
             [
                 'name' => "m7",
-                'image' => "http://localhost:8000/images/m7.png",
+                'image' => "https://laravel-proof-production.up.railway.app/images/m7.png",
             ],
             [
                 'name' => "m8",
-                'image' => "http://localhost:8000/images/m8.png",
+                'image' => "https://laravel-proof-production.up.railway.app/images/m8.png",
             ],
             [
                 'name' => "m9",
-                'image' => "http://localhost:8000/images/m9.png",
+                'image' => "https://laravel-proof-production.up.railway.app/images/m9.png",
             ],
             [
                 'name' => "m10",
-                'image' => "http://localhost:8000/images/m10.png",
+                'image' => "https://laravel-proof-production.up.railway.app/images/m10.png",
             ],
             [
                 'name' => "m11",
-                'image' => "http://localhost:8000/images/m11.png",
+                'image' => "https://laravel-proof-production.up.railway.app/images/m11.png",
             ],
             [
                 'name' => "m12",
-                'image' => "http://localhost:8000/images/m12.png",
+                'image' => "https://laravel-proof-production.up.railway.app/images/m12.png",
             ],
             [
                 'name' => "m13",
-                'image' => "http://localhost:8000/images/m13.png",
+                'image' => "https://laravel-proof-production.up.railway.app/images/m13.png",
             ],
         ]);
     }

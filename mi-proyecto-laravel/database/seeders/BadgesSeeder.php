@@ -22,12 +22,12 @@ class BadgesSeeder extends Seeder
             [
             'name' => "First Success",
             'type' => "Clue",
-            'image' => "http://localhost:8000/images/badges/b4.png"
+            'image' => "https://laravel-proof-production.up.railway.app/images/badges/b4.png"
             ],
             [
             'name' => "Final help",
             'type' => "Clue",
-            'image' => "http://localhost:8000/images/badges/b2.png"
+            'image' => "https://laravel-proof-production.up.railway.app/images/badges/b2.png"
             ],
         ]);
     }
