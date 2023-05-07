@@ -103,20 +103,20 @@ Maybe at the moment of creating some endpoints, the known grammar of JS has been
 We used model view controller to structure our project. We created a basic CRUD.
 The project will have the following structure:
 
-	Migrations.
-From the migrations, the table structure has been defined, with all its columns and types. 
-	Models.
-With the models we have defined the relations between the tables and the kind of relation. 
-	Controllers.
-In the controllers we have created every endpoints, arranged with the same migrations and models’ structure.
-	Middlewares.
-In this occasion, we only have nee done middleware, which is the admin.
-	Seeders.
-All the seeders needed to run the application once is up and running have been created. 
-	api.
-From the archive api.php we have defined every route and its relation with its controllers and endpoints.
-	.env
-In the archive .env we have defined every variable. 
+- Migrations.
+	From the migrations, the table structure has been defined, with all its columns and types. 
+- Models.
+	With the models we have defined the relations between the tables and the kind of relation. 
+- Controllers.
+	In the controllers we have created every endpoints, arranged with the same migrations and models’ structure.
+- Middlewares.
+	In this occasion, we only have nee done middleware, which is the admin.
+- Seeders.
+	All the seeders needed to run the application once is up and running have been created. 
+- api.
+	From the archive api.php we have defined every route and its relation with its controllers and endpoints.
+- .env
+	In the archive .env we have defined every variable. 
 
 
 ## DataBase
@@ -266,7 +266,7 @@ This endpoint obtains the information from the user id through a token.
     - Updates the image associated to a character.
   
             PUT:   https://laravel-proof-production.up.railway.app/api/characters/images
-body:
+	body:
         ``` bash
         {
             "id": 1,
@@ -299,30 +299,37 @@ body:
 <summary><strong>Games</strong></summary>
 - Get Games: 
     - Obtains every saved game. 
+	
             GET:   https://laravel-proof-production.up.railway.app/api/games
 
 - Get Games with Select Games: 
     - Obtains every saved game with the game they belong to. 
+	
             GET:   https://laravel-proof-production.up.railway.app/api/games/withSelectGames
 
 - Get Games with Characters: 
     - Obtains every saved game with the character they belong to. 
+	
             GET:   https://laravel-proof-production.up.railway.app/api/games/byCharacter/{id}
 
 - Get Games by Id: 
-	  - Obtains a saved game by the selected Id. 
+    - Obtains a saved game by the selected Id. 
+	
             GET:   https://laravel-proof-production.up.railway.app/api/games/byId/{id}
 
 - Get Games with Games Stages: 
     - Obtains every saved game with the stages registered in them. 
+	
             GET:   https://laravel-proof-production.up.railway.app/api/games/withGamesStages
 
 - Get Games with All Information: 
     - Obtains every saved game with the stage registered in them and the selected game ther belong to.
+	
             GET:   https://laravel-proof-production.up.railway.app/api/games/withAllInfo
 
 - Create Game: 
     - Creates a new game.
+	
             POST:   https://laravel-proof-production.up.railway.app/api/games
         body:
         ``` bash
@@ -336,6 +343,7 @@ body:
 
 - Create Saved Game: 
     - Registers a saved stage in a game.
+	
             POST:   https://laravel-proof-production.up.railway.app/api/games/save
         body:
         ``` bash
@@ -347,6 +355,7 @@ body:
 
 - Update Saved Game: 
     - Updates a saved stage in a game. It is used mainly to register the selected answer in the stage. 
+	
             PUT:   https://laravel-proof-production.up.railway.app/api/games/update
         body:
         ``` bash
@@ -359,6 +368,7 @@ body:
 - Update Madness at Game: 
     - Updates the Madness level registered in a game. 
             PUT:   https://laravel-proof-production.up.railway.app/api/games/updateMadness
+	
         body:
         ``` bash
         {
@@ -370,6 +380,7 @@ body:
 - Update Finished state at Game: 
     - Upadtes the stage of a finished game.  
             PUT:   https://laravel-proof-production.up.railway.app/api/games/updateFinished
+	
         body:
         ``` bash
         {
@@ -381,6 +392,7 @@ body:
 - Update Guide at Game: 
     - Updates the selected guide in a game.  
             PUT:   https://laravel-proof-production.up.railway.app/api/games/updateGuide
+	
         body:
         ``` bash
         {
@@ -395,25 +407,31 @@ body:
 
 - Get Stages: 
     - Obtains a list of every created stage in a game. 
+	
             GET:   https://laravel-proof-production.up.railway.app/api/stages
 
 - Get Stages with Answers: 
     - Obtains a list of every created stage in a game with the possible answers associated. 
+	
             GET:   https://laravel-proof-production.up.railway.app/api/stages/withAnswers
+</details>
 
 <details>
 <summary><strong>Answers</strong></summary>
 
 - Get Answers: 
-    - Obtains a list of every possible registered answer. 
+    - Obtains a list of every possible registered answer.
+	
             GET:   https://laravel-proof-production.up.railway.app/api/answers
 
 - Get Answers: 
     - Obtains a list of every possible registered answer and the stage they belong to.
+	
             GET:   https://laravel-proof-production.up.railway.app/api/answers/withStage
 
 - Get Answers by Id: 
     - Obtains an answer by the selected Id with the information associated to the stage it belongs to and the badge associated. 
+	
             GET:   https://laravel-proof-production.up.railway.app/api/answers/{id}
 
 </details>
@@ -423,18 +441,22 @@ body:
 
 - Get Badges: 
     - Obtains a list of every registered badge in the game. 
+	
             GET:   https://laravel-proof-production.up.railway.app/api/badges
 
 - Get Badges with answers: 
     - Obtains a list of every registered badge in the game and the answer they are associated to.
+	
             GET:   https://laravel-proof-production.up.railway.app/api/badges/withAnswers
 
 - Get Badges by Game Id: 
     - Obtains every registered badge in a game with the information associated to the game they belong to and the badge’s details. 
+	
             GET:   https://laravel-proof-production.up.railway.app/api/badges/ByGameId/{id}
 
 - Add Badge to Game: 
     - Creates an entry in the intermediate table which associates a badge to a game. 
+	
             POST:   https://laravel-proof-production.up.railway.app/api/badges/add
         body:
         ``` bash
@@ -446,6 +468,7 @@ body:
 
 - Consume badge to Game: 
   	- Updates the stage of a badge in a game to “consumed” when it it used. 
+	
             POST:   https://laravel-proof-production.up.railway.app/api/badges/add
         body:
         ``` bash
