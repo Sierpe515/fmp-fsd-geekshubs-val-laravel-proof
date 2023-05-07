@@ -190,7 +190,7 @@ Fill the fields separately is also possible, without needing to modify or update
         body:
         ``` bash
         {
-            "userName": "Fulano",
+            "userName": "Full"
         }
         ```
 - Delete User: 
