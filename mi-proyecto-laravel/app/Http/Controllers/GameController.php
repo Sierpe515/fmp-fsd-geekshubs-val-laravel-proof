@@ -225,5 +225,18 @@ class GameController extends Controller
                 'message' => $th->getMessage()],500);
         }  
     }
+
+    public function getGamesStages(){
+        $users = GameStage::query()->get();
+        return $users;
+    }
+
+    public function getGamesStagesByStageId($id){
+        $users = GameStage::query()
+        ->where('stage_id', $id)
+        ->get();
+        return $users;
+    }
+
 }
 
