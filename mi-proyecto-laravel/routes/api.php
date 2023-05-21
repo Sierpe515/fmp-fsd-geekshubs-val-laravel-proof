@@ -97,6 +97,7 @@ Route::group([
 
 // STAGES
 Route::get('/stages', [StageController::class, 'getStages']);
+Route::get('/stagesNF', [StageController::class, 'getStagesNoFinals']);
 Route::get('/stages/withAnswers', [StageController::class, 'getStagesWithAnswers']);
 
 // ANSWERS

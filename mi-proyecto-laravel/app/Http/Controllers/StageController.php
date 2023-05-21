@@ -16,4 +16,9 @@ class StageController extends Controller
         $stagesWithAnswers = Stage::with('answers')->get();
         return $stagesWithAnswers;
     }
+
+    public function getStagesNoFinals(){
+        $stages = Stage::where('id', '<', 15)->get();
+        return $stages;
+    }
 }
